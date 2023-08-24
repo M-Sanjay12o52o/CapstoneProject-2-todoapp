@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Todays List</h1>
+<% if (Array.isArray(todos) && todos.length > 0) { %> <% for (let item of todos)
+{ %>
+<p class="items"><%= item %></p>
+<% } %> <% } else { %>
+<p>No todos to display.</p>
+<% } %>
+
+<form action="/" method="post">
+  <input type="text" name="content" placeholder="Enter Todos" />
+  <button type="submit">Add Todo</button>
+</form>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Work List</h1>
+<% if (Array.isArray(workTodos) && workTodos.length > 0) { %> <% for (let item
+of workTodos) { %>
+<p class="items"><%= item %></p>
+<% } %> <% } else { %>
+<p>No work todos to display.</p>
+<% } %>
+
+<form action="/work" method="post">
+  <input type="text" name="content" placeholder="Enter Work Todos" />
+  <button type="submit">Add Work Todo</button>
+</form>
+
+<%- include("partials/footer.ejs") %>
